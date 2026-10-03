@@ -1,75 +1,78 @@
-# React + TypeScript + Vite
+Project Name: picopeeps
+Project Type: ecommerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tools: 
+react, supabase, github, tailwind, html
 
-Currently, two official plugins are available:
+Project Description:
+Picopeeps is an ecommerce website. It contains the child educational stationaries. Customer can see the product and 
+product details, can add to cart and place order.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+User story:
+us-001: view product
+as a customer, i want to view available products so that i can choose a product to purchase.
 
-## React Compiler
+Acceptance criteria:
+- customer can see product list.
+- customer can see product image.
+- Can see product name.
+- can see product price/ discount price.
+- can see stock/ out of stock.
+- click on product than show the product details page.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+US-002: View Product Details
+As a customer, I want to view product details so that I can decide whether to purchase the product.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Acceptance Criteria:
+- Product image
+- Product name
+- Price
+- Description
+- Available quantity
+- Product variants থাকলে variants
+- Add to Cart button
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+US-003: Place Order
+As a customer, I want to place an order so that I can purchase products from PicoPeeps.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Acceptance Criteria:
+- Customer cart review করতে পারবে
+- Shipping information দিতে পারবে
+- Payment method select করতে পারবে
+- Order summary দেখতে পারবে
+- Order successfully create হলে confirmation দেখাবে
+- Order ID generate হবে
 
-```
+US-004 – Track Order
+As a customer, I want to check my order status so that I know the current status of my order.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Possible Status:
+Pending-Confirmed-Processing-Shipped-Delivered-Cancelled-Returned
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Page & Fetures: 
+- 	Home(Featured products, categories, promotions)
+-	Products (All products)
+-	Category Products(নির্দিষ্ট category-এর products)
+-	Product Details	(Product-এর বিস্তারিত তথ্য)
+-	*Cart	(Selected products ও quantity দেখা)
+-	Checkout	(Address, shipping ও payment information)
+-	Order Confirmation	(Order successfully placed হওয়ার confirmation)
+-	Login	(Customer login) + Register	(New customer registration)
+-	Forgot Password	(Password recovery)
+-	My Account / Profile	(Customer profile)
+-	My Orders	(Previous orders দেখা)
+-	Order Details	(নির্দিষ্ট order-এর বিস্তারিত)
+-	Order Tracking	(Current order status দেখা)
+-	*Wishlist	(Favourite products save করা)
+-	Contact Us	(Customer যোগাযোগ করতে পারবে)
+-	About Us	(PicoPeeps সম্পর্কে তথ্য)
+-	FAQ	(Frequently Asked Questions)
+-	Privacy Policy	(Privacy policy)
+-	Terms & Conditions	(Terms)
+-	Return & Refund Policy	(Return/refund rules)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 
-```
+ 
+
