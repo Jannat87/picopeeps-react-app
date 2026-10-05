@@ -51,7 +51,7 @@
 }
 
 #root {
-  width: 1126px;
+  width: 99%;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -109,3 +109,14 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+        /* Custom brand colors based on the logo */
+        .bg-brand-teal { background-color: #1BC0B6; }
+        .bg-brand-dark { background-color: #2C2C2C; }
+        .text-brand-teal { color: #1BC0B6; }
+        .text-brand-dark { color: #2C2C2C; }
+        .border-brand-teal { border-color: #1BC0B6; }
+        
+        /* Font styling to match the logo's rounded look */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .logo-font { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; }

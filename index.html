@@ -1,12 +1,25 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picopeeps - Tiny Joys Bloom</title>
     <link rel="icon" type="image/svg+xml" href="/icon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PicoPeeps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom brand colors based on the logo */
+        .bg-brand-teal { background-color: #1BC0B6; }
+        .bg-brand-dark { background-color: #2C2C2C; }
+        .text-brand-teal { color: #1BC0B6; }
+        .text-brand-dark { color: #2C2C2C; }
+        .border-brand-teal { border-color: #1BC0B6; }
+        
+        /* Font styling to match the logo's rounded look */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .logo-font { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; }
+    </style>
   </head>
-  <body>
+  <body class="bg-gray-50 text-brand-dark">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
