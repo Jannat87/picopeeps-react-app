@@ -8,11 +8,15 @@ import Products from './pages/Products'
 import Product_Details from './pages/Product_Details'
 import Checkout from './pages/Checkout'
 import Cart from './pages/Cart'
+import Order_Confirmation from './pages/Order_Confirmation'
+import Order_Details from './pages/Order_Details'
 import Category from './component-page/Category'
 import Category_Products from './pages/Category_Products'
 import About_Us from './pages/About_Us'
 import Contact_Us from './pages/Contact_Us'
+import FAQ from './pages/FAQ'
 import Login from './pages/Login'
+import Forgot_Password from './pages/Forgot_Password'
 import My_Account from './pages/My_Account'
 import My_Orders from './pages/My_Orders'
 import Wishlist from './pages/Wishlist'
@@ -43,6 +47,14 @@ const router = createBrowserRouter([
         element: <Cart/>
       },
       {
+        path:"/order-confirmation",
+        element: <Order_Confirmation/>
+      },
+      {
+        path:"/order-details",
+        element: <Order_Details/>
+      },
+      {
         path: "wishlist",
         element: <Wishlist/>
       },
@@ -63,8 +75,16 @@ const router = createBrowserRouter([
         element: <Contact_Us/>
       },
       {
+        path:"/faq",
+        element: <FAQ/>
+      },
+      {
         path:"/login",
         element: <Login/>
+      },
+      {
+        path:"/forgot-password",
+        element: <Forgot_Password/>
       },
       {
         path:"/my-account",
