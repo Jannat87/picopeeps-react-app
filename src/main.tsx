@@ -10,10 +10,14 @@ import Checkout from './pages/Checkout'
 import Cart from './pages/Cart'
 import Order_Confirmation from './pages/Order_Confirmation'
 import Order_Details from './pages/Order_Details'
+import Order_Tracking from './pages/Order_Tracking'
+import Return_Refund_Policy from './pages/Return_Refund_Policy'
+import Terms_Conditions from './pages/Terms_Conditions'
 import Category from './component-page/Category'
 import Category_Products from './pages/Category_Products'
 import About_Us from './pages/About_Us'
 import Contact_Us from './pages/Contact_Us'
+import Privacy_Policy from './pages/Privacy_Policy'
 import FAQ from './pages/FAQ'
 import Login from './pages/Login'
 import Forgot_Password from './pages/Forgot_Password'
@@ -51,6 +55,10 @@ const router = createBrowserRouter([
         element: <Order_Confirmation/>
       },
       {
+        path:"/order-tracking",
+        element: <Order_Tracking/>
+      },
+      {
         path:"/order-details",
         element: <Order_Details/>
       },
@@ -73,6 +81,18 @@ const router = createBrowserRouter([
       {
         path:"/contact-us",
         element: <Contact_Us/>
+      },
+      {
+        path:"/privacy-policy",
+        element: <Privacy_Policy/>
+      },
+      {
+        path:"/return-refund-policy",
+        element: <Return_Refund_Policy/>
+      },
+      {
+        path:"/terms-conditions",
+        element: <Terms_Conditions/>
       },
       {
         path:"/faq",
