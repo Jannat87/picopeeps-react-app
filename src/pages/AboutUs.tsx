@@ -1,14 +1,14 @@
 import { useOutletContext } from "react-router-dom";
 
-function About(){
+function AboutUs(){
     const title = useOutletContext<string>();
     return(
         <>
-            <p>About Page</p>
+            <p>About Us Page</p>
             of 
             <h3>{title}</h3>
         </>
     )
 }
 
-export default About;
+export default AboutUs;

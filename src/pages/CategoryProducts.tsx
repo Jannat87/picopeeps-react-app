@@ -1,6 +1,6 @@
 // import { Link } from "react-router-dom";
 
-function Category_Products(){
+function CategoryProducts(){
     return(
         <>
 
@@ -221,4 +221,4 @@ function Category_Products(){
     )
 }
 
-export default Category_Products;
+export default CategoryProducts;

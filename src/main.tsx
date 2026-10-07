@@ -1,126 +1,126 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.css'
-import App from './App'
-import Home from './pages/Home'
-import Products from './pages/Products'
-import Product_Details from './pages/Product_Details'
-import Checkout from './pages/Checkout'
-import Cart from './pages/Cart'
-import Order_Confirmation from './pages/Order_Confirmation'
-import Order_Details from './pages/Order_Details'
-import Order_Tracking from './pages/Order_Tracking'
-import Return_Refund_Policy from './pages/Return_Refund_Policy'
-import Terms_Conditions from './pages/Terms_Conditions'
-import Category from './component-page/Category'
-import Category_Products from './pages/Category_Products'
-import About_Us from './pages/About_Us'
-import Contact_Us from './pages/Contact_Us'
-import Privacy_Policy from './pages/Privacy_Policy'
-import FAQ from './pages/FAQ'
-import Login from './pages/Login'
-import Forgot_Password from './pages/Forgot_Password'
-import My_Account from './pages/My_Account'
-import My_Orders from './pages/My_Orders'
-import Wishlist from './pages/Wishlist'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import ProductDetails from "./pages/ProductDetails";
+import Checkout from "./pages/Checkout";
+import Cart from "./pages/Cart";
+import OrderConfirmation from "./pages/OrderConfirmation";
+import OrderDetails from "./pages/OrderDetails";
+import OrderTracking from "./pages/OrderTracking";
+import ReturnRefundPolicy from "./pages/ReturnRefundPolicy";
+import TermsConditions from "./pages/TermsConditions";
+import Category from "./component-page/Category";
+import CategoryProducts from "./pages/CategoryProducts";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import FAQ from "./pages/FAQ";
+import Login from "./pages/Login";
+import ForgotPassword from "./pages/ForgotPassword";
+import MyAccount from "./pages/MyAccount";
+import MyOrders from "./pages/MyOrders";
+import Wishlist from "./pages/Wishlist";
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element: <App/>,
+    path: "/",
+    element: <App />,
     children: [
       {
-        path:"",
-        element: <Home/>
+        path: "",
+        element: <Home />,
       },
       {
-        path:"/products",
-        element: <Products/>
+        path: "/products",
+        element: <Products />,
       },
       {
-        path:"/product-details",
-        element: <Product_Details/>
+        path: "/product-details",
+        element: <ProductDetails />,
       },
       {
-        path:"/checkout",
-        element: <Checkout/>
+        path: "/checkout",
+        element: <Checkout />,
       },
       {
-        path:"/cart",
-        element: <Cart/>
+        path: "/cart",
+        element: <Cart />,
       },
       {
-        path:"/order-confirmation",
-        element: <Order_Confirmation/>
+        path: "/order-confirmation",
+        element: <OrderConfirmation />,
       },
       {
-        path:"/order-tracking",
-        element: <Order_Tracking/>
+        path: "/order-tracking",
+        element: <OrderTracking />,
       },
       {
-        path:"/order-details",
-        element: <Order_Details/>
+        path: "/order-details",
+        element: <OrderDetails />,
       },
       {
-        path: "wishlist",
-        element: <Wishlist/>
+        path: "/wishlist",
+        element: <Wishlist />,
       },
       {
-        path:"/category",
-        element: <Category/>
+        path: "/category",
+        element: <Category />,
       },
       {
-        path:"/category-products",
-        element: <Category_Products/>
+        path: "/category-products",
+        element: <CategoryProducts />,
       },
       {
-        path:"/about-us",
-        element: <About_Us/>
+        path: "/about-us",
+        element: <AboutUs />,
       },
       {
-        path:"/contact-us",
-        element: <Contact_Us/>
+        path: "/contact-us",
+        element: <ContactUs />,
       },
       {
-        path:"/privacy-policy",
-        element: <Privacy_Policy/>
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />,
       },
       {
-        path:"/return-refund-policy",
-        element: <Return_Refund_Policy/>
+        path: "/return-refund-policy",
+        element: <ReturnRefundPolicy />,
       },
       {
-        path:"/terms-conditions",
-        element: <Terms_Conditions/>
+        path: "/terms-conditions",
+        element: <TermsConditions />,
       },
       {
-        path:"/faq",
-        element: <FAQ/>
+        path: "/faq",
+        element: <FAQ />,
       },
       {
-        path:"/login",
-        element: <Login/>
+        path: "/login",
+        element: <Login />,
       },
       {
-        path:"/forgot-password",
-        element: <Forgot_Password/>
+        path: "/forgot-password",
+        element: <ForgotPassword />,
       },
       {
-        path:"/my-account",
-        element: <My_Account/>
+        path: "/my-account",
+        element: <MyAccount />,
       },
       {
-        path:"/my-orders",
-        element: <My_Orders/>
-      }
-    ]
-  }
+        path: "/my-orders",
+        element: <MyOrders />,
+      },
+    ],
+  },
 ]);
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* <App /> */}
-    <RouterProvider router = {router}/>
-  </StrictMode>
-)
+    <RouterProvider router={router} />
+  </StrictMode>,
+);
