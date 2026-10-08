@@ -90,7 +90,6 @@ function Nav({ carts}: NavProps) {
       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
     />
   </svg>
-
   
     <span className="absolute -top-2 -right-2 flex items-center justify-center min-w-[20px] h-5 px-1.5 text-[11px] font-bold text-white bg-gradient-to-br from-red-500 to-pink-600 rounded-full shadow-md ring-2 ring-white group-hover:scale-110 transition-transform">
        {cartItems.length}
