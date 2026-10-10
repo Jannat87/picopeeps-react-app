@@ -1,8 +1,37 @@
 import Hero from "../component-page/Hero";
 import Category from "../component-page/Category";
+import { useCart } from "../context/CartContext";
+
+const products = [
+  {
+    id: 1,
+    name: "T-Shirt",
+    price: 500,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: 2,
+    name: "Hoodie",
+    price: 1200,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: 3,
+    name: "Cap22",
+    price: 300,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: 4,
+    name: "Cap11",
+    price: 1300,
+    image: "https://via.placeholder.com/150",
+  },
+];
 
 function Home() {
-  // const title = useOutletContext<string>();
+  const { addToCart } = useCart();
+
   return (
     <>
       <Hero />
@@ -23,156 +52,52 @@ function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition group">
-              <div className="relative h-64 bg-gray-200 overflow-hidden">
-                <img
-                  src="https://placehold.co/400x400/CCCCCC/666666?text=Product+1"
-                  alt="Product"
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                />
-                <span className="absolute top-4 left-4 bg-brand-teal text-white text-xs font-bold px-2 py-1 rounded">
-                  New
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-lg mb-1">Colorful Pencil Set</h3>
-                <p className="text-gray-500 text-sm mb-3">Stationery</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-xl font-bold text-brand-dark">
-                    $12.00
+            {products.map((p: any) => (
+              <div
+                key={p.id}
+                className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition group"
+              >
+                <div className="relative h-64 bg-gray-200 overflow-hidden">
+                  <img
+                    src="https://placehold.co/400x400/CCCCCC/666666?text=Product+1"
+                    alt="Product"
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                  />
+                  <span className="absolute top-4 left-4 bg-brand-teal text-white text-xs font-bold px-2 py-1 rounded">
+                    New
                   </span>
-                  <button className="bg-brand-dark text-white p-2 rounded-full hover:bg-brand-teal transition">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                      />
-                    </svg>
-                  </button>
                 </div>
-              </div>
-            </div>
 
-            <div className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition group">
-              <div className="relative h-64 bg-gray-200 overflow-hidden">
-                <img
-                  src="https://placehold.co/400x400/CCCCCC/666666?text=Product+2"
-                  alt="Product"
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                />
-                <span className="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                  Sale
-                </span>
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-lg mb-1">Dinosaur Notebook</h3>
-                <p className="text-gray-500 text-sm mb-3">Stationery</p>
-                <div className="flex justify-between items-center">
-                  <div>
+                <div className="p-5">
+                  <h3 className="font-bold text-lg mb-1">{p.name}</h3>
+                  <p className="text-gray-500 text-sm mb-3">Stationery</p>
+                  <div className="flex justify-between items-center">
                     <span className="text-xl font-bold text-brand-dark">
-                      $8.00
+                      ${p.price}
                     </span>
-                    <span className="text-sm text-gray-400 line-through ml-1">
-                      $10.00
-                    </span>
+                    <button
+                      onClick={() => addToCart(p)}
+                      className="bg-brand-dark text-white p-2 rounded-full hover:bg-brand-teal transition"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                        />
+                      </svg>
+                    </button>
                   </div>
-                  <button className="bg-brand-dark text-white p-2 rounded-full hover:bg-brand-teal transition">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                      />
-                    </svg>
-                  </button>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition group">
-              <div className="relative h-64 bg-gray-200 overflow-hidden">
-                <img
-                  src="https://placehold.co/400x400/CCCCCC/666666?text=Product+3"
-                  alt="Product"
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-lg mb-1">Watercolor Set</h3>
-                <p className="text-gray-500 text-sm mb-3">Art Supplies</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-xl font-bold text-brand-dark">
-                    $15.00
-                  </span>
-                  <button className="bg-brand-dark text-white p-2 rounded-full hover:bg-brand-teal transition">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition group">
-              <div className="relative h-64 bg-gray-200 overflow-hidden">
-                <img
-                  src="https://placehold.co/400x400/CCCCCC/666666?text=Product+4"
-                  alt="Product"
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="font-bold text-lg mb-1">Kids Backpack</h3>
-                <p className="text-gray-500 text-sm mb-3">Accessories</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-xl font-bold text-brand-dark">
-                    $25.00
-                  </span>
-                  <button className="bg-brand-dark text-white p-2 rounded-full hover:bg-brand-teal transition">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

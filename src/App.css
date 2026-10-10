@@ -182,3 +182,145 @@
     border-right-color: var(--border);
   }
 }
+
+/* src/index.css বা App.css */
+
+/* ---------- Overlay ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;                      /* top:0, right:0, bottom:0, left:0 */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+/* ---------- Drawer ---------- */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;                 /* শুরুতে ডানপাশে লুকানো */
+  width: 380px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;   /* ← slide animation */
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+}
+
+/* যখন open class যোগ হয় → ভিতরে সরে আসে */
+.drawer.open {
+  right: 0;
+}
+
+/* ---------- Header ---------- */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.drawer-header button {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ---------- Body ---------- */
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;              /* অনেক item হলে scroll */
+  padding: 16px;
+}
+
+.empty {
+  text-align: center;
+  margin-top: 40px;
+  color: #888;
+}
+
+/* ---------- Cart Item ---------- */
+.cart-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.cart-item img {
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.cart-item .info {
+  flex: 1;
+}
+
+.cart-item h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.cart-item p {
+  margin: 0 0 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* ---------- Quantity Controls ---------- */
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty button {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.qty span {
+  min-width: 20px;
+  text-align: center;
+}
+
+/* ---------- Remove Button ---------- */
+.remove {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ---------- Footer ---------- */
+.drawer-footer {
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+.drawer-footer h4 {
+  margin: 0 0 10px;
+}
+
+.checkout {
+  width: 100%;
+  padding: 12px;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.checkout:hover {
+  background: #333;
+}

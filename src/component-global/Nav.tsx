@@ -1,30 +1,8 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import {useCart} from "../context/CartContext";
 
-interface CartItem {
-  id: number;
-  name: string;
-  qty: number;
-  price: number;
-}
-
-interface NavProps {
-  carts: CartItem[];
-}
-
-function Nav({ carts}: NavProps) {
-  // const carts = useOutletContext<OutletContextType>();
-  let cartItems = carts;
-
-  useEffect(() => {
-    console.log('__myCartBeforeClick:', cartItems );    
-  }, []);
-
-  function addToCart(product: CartItem) {    
-    cartItems = [...cartItems, product];
-    console.log('__myCart:', cartItems);
-  }
-
+function Nav() {
+  const { totalItems, setIsDrawerOpen} = useCart();
 
   return (
     <>
@@ -75,27 +53,32 @@ function Nav({ carts}: NavProps) {
                 />
               </svg>
             </Link>
-<Link to="/cart" className="relative inline-flex items-center hover:text-brand-teal transition group">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6 transition-transform group-hover:scale-110"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-    />
-  </svg>
-  
-    <span className="absolute -top-2 -right-2 flex items-center justify-center min-w-[20px] h-5 px-1.5 text-[11px] font-bold text-white bg-gradient-to-br from-red-500 to-pink-600 rounded-full shadow-md ring-2 ring-white group-hover:scale-110 transition-transform">
-       {cartItems.length}
-    </span>
+            <button
+              onClick={()=>setIsDrawerOpen(true)}              
+              className="relative inline-flex items-center hover:text-brand-teal transition group"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 transition-transform group-hover:scale-110"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
 
-</Link>            
+              <span onClick={() => setIsDrawerOpen(true)} className="absolute -top-2 -right-2 flex items-center justify-center min-w-[20px] h-5 px-1.5 text-[11px] font-bold text-white bg-gradient-to-br from-red-500 to-pink-600 rounded-full shadow-md ring-2 ring-white group-hover:scale-110 transition-transform">
+                {totalItems}
+              </span>
+            </button>
+            {/* <button className="cart-btn" onClick={()=>setIsDrawerOpen(true)}>
+              {totalItems > 0 && <span className="badge">{totalItems}</span>}
+            </button> */}
             <Link to="/my-account" className="hover:text-brand-teal transition">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -112,8 +95,6 @@ function Nav({ carts}: NavProps) {
                 />
               </svg>
             </Link>
-            {/* <button onClick={() => addToCart()}>+cart 1</button> */}
-            <button onClick={() => addToCart({ id: 2, name: 'Bra', qty: 2, price: 1500 })}>+cart 2</button>
           </div>
         </div>
       </nav>

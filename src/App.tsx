@@ -1,26 +1,20 @@
 import { Outlet } from "react-router-dom";
+import "./App.css";
 import Nav from "./component-global/Nav";
 import Footer from "./component-global/Footer";
-import { useState } from "react";
-
-export interface CartItem {
-  id: number;
-  name: string;
-  qty: number;
-  price: number;
-}
+import CartDrawer from "./component-global/CartDrawer";
 
 function App() {
-  let name = "PicoPeeps";
-  const [carts, setCarts] = useState<CartItem[]>([]);
+  let name = "PicoPeeps";  
 
   return (
     <>
-      <Nav carts={carts} />
+      <Nav />
       <main>
-        <Outlet context={{ name, carts }} />
+        <Outlet context={{ name }} />
       </main>
       <Footer />
+      <CartDrawer/>
     </>
   );
 }

@@ -24,6 +24,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import MyAccount from "./pages/MyAccount";
 import MyOrders from "./pages/MyOrders";
 import Wishlist from "./pages/Wishlist";
+// provider
+import { CartProvider } from "./context/CartContext";
 
 const router = createBrowserRouter([
   {
@@ -120,7 +122,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* <App /> */}
-    <RouterProvider router={router} />
-  </StrictMode>,
+    <CartProvider>
+      {/* <App /> */}
+      <RouterProvider router={router} />
+    </CartProvider>
+  </StrictMode>
 );

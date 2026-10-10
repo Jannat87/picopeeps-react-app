@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import {useCart} from "../context/CartContext";
 
 function Products() {
+  const {addToCart} = useCart();
   return (
     <>
       <div className="bg-white border-b border-gray-200">
@@ -146,7 +148,7 @@ function Products() {
                       In Stock
                     </span>
                   </div>
-                  <button className="w-full bg-brand-dark text-white font-semibold py-2 rounded-full hover:bg-brand-teal transition flex items-center justify-center gap-2">
+                  <button onClick="addToCart()" className="w-full bg-brand-dark text-white font-semibold py-2 rounded-full hover:bg-brand-teal transition flex items-center justify-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
